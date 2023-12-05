@@ -27,19 +27,19 @@ function toggleClose(docData = {}, isNewDoc = true)
 };
 async function deletTask(id) 
 {
-    await deleteDoc(db, 'tasks', id)
+    await deleteDoc(db, 'tasks', doc)
 };
 </script>
 
 <template>
-    <div>
+    <div class="container p-3 my-4 fs-3 text-white fw-bold bg-warning fs-3 text-center rounded">Feladatok</div>
+    <div class="container mx-2 my-3 bg-primary rounded">
         <AddOrUpdate @close="toggleClose" v-if="show" :data="data" :isNew="isNew"/>
-        <button @click="toggleClose()">Hozzáad</button>
+        <button class="btn btn-danger p-2 m-2" @click="toggleClose()">Hozzáad</button>
        <div v-for="task in tasks" :key="task.id" @click="toggleClose(task, false)">
-        <div>Ez: {{ task.name }}</div>
-        <div>A próba: {{ task.description}}</div>
-        <button @click.stop="deletTask(task.id)">Törlés</button>
-
+        <div class="text text-black fw-bold fs-3">Teszt: {{ task.name }}</div>
+        <div class="text text-black fw-bold fs-3">Eredmény: {{ task.description}}</div>
+        <button class="btn btn-danger my-2 p-2" @click.stop="deletTask(task.id)">Törlés</button>
        </div>
     </div>
 </template>

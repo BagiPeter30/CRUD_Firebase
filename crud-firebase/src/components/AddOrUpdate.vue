@@ -63,9 +63,9 @@ async function addOrUpdate()
     position: absolute;
     top: 10;
     left: 10;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, .4);
+    width: 30vw;
+    height: 40vh;
+    background: rgba(165, 89, 89, 0.4);
     transition: all .4 ease;
 }
 .model-wrapper
@@ -85,6 +85,7 @@ input,textarea
 {
     width: 90%;
     margin: 10px 5px;
+    padding: 10px;
     overflow: hidden;
 }
 </style>
